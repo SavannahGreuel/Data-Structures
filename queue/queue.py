@@ -1,6 +1,7 @@
 class Queue:
   def __init__(self):
     self.size = 0
+    # start here
     # what data structure should we
     # use to store queue elements?
     self.storage = 
@@ -13,3 +14,4 @@ class Queue:
 
   def len(self):
     pass
+    
