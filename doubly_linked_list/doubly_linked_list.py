@@ -52,13 +52,36 @@ class DoublyLinkedList:
       self.tail = self.head
 
   def remove_from_head(self):
-    pass
+    if self.head:
+      new_head = self.head.next
+      temp = self.head.value
+      self.head.delete()
+      self.head = new_head
+      if not self.head:
+        self.tail = None
+      return temp
+    else:
+      return None
 
   def add_to_tail(self, value):
-    pass
+    if self.tail:
+      self.tail.insert_after(value)
+      self.tail = self.tail.next
+    else:
+      self.tail = ListNode(value)
+      self.head = self.remove_from_tail
 
   def remove_from_tail(self):
-    pass
+    if self.tail:
+      new_tail = self.tail.next
+      temp = self.tail.value
+      self.tail.delete()
+      self.tail = new_tail
+      if not self.tail:
+        self.head = None
+      return temp
+    else:
+      return None
 
   def move_to_front(self, node):
     pass
